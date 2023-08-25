@@ -99,12 +99,13 @@
     }
     .search-div {
         margin-top: 20px;
-        width: auto;
+        width: 400px;
+        margin-left:40px;
         height: 30px;
     }
 
     #search-bar {
-        width: 100%;
+        width: 300px;
         color: white;
         border: 0;
         font-size: 13px;
@@ -116,7 +117,8 @@
     }
     .topbar {
         display: flex;
-        justify-content: start;
+        justify-content: center;
+        align-items: center;
     }
     .results-div{
         max-height: 70vh;
