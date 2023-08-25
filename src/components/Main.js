@@ -1,7 +1,6 @@
 import '../Main.css'
 import SearchResult from "./SearchResult";
 import {useEffect, useState} from "react";
-import {ConnectButton} from '@rainbow-me/rainbowkit';
 
 export default function Main(props) {
     const [query, setQuery] = useState("")
@@ -62,7 +61,7 @@ export default function Main(props) {
                         </svg>
                     </div>
                 </div>
-                <div className={"connect-btn-div"}><span className={"connect-btn"}>Connect<ConnectButton/></span></div>
+                <div className={"connect-btn-div"}><span className={"connect-btn"}>Connect</span></div>
             </div>
             {
                 resultLoaded === true &&
