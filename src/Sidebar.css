@@ -187,7 +187,7 @@
     }
     .sidebarvisible{
         transform: translateX(0%);
-        height: 95vh;
+        height: 100%;
         position: relative;
     }
 }
