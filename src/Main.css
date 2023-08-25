@@ -1,0 +1,128 @@
+.index {
+    font-family: 'Work Sans', 'serif';
+    color: white;
+    padding: 20px;  overflow:hidden;
+    width: 100%;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+    height: 100px;
+}
+
+.search-div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-top: 10px;
+    align-items: center;
+    width: 505px;
+    z-index: 10;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 25px 25px 25px 25px;
+}
+
+.connect-btn {
+    width: 156px;
+    text-align: center;
+    margin-right: 50px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    height: 52px;
+    z-index: 10;
+    background: linear-gradient(95.24deg, #7C0F35 7.59%, #581266 104.01%);
+    border-radius: 20px;
+}
+
+.connect-btn-div {
+    display: flex;
+    justify-content: center;
+}
+
+#search-bar {
+    width: 435px;
+    outline: none;
+    padding-left: 20px;
+    color: white;
+    border: 0;
+    font-size: 18px;
+    padding-right: 40px;
+    font-weight: bold;
+    font-family: "Poppins", 'serif';
+    caret: white;
+    height: 50px;
+    background: transparent;
+}
+
+
+#search-bar::placeholder {
+    color: white;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+
+}
+
+.loading-div {
+    position: absolute;
+    z-index: 999;
+    display: none;
+    top: 50%;
+    right: 50%;
+}
+
+.results-div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+    overflow: scroll;
+    height: 100vh;
+}
+
+.display {
+    display: grid;
+}
+
+@media screen and (max-width: 1020px) {
+    .result-heading{
+        text-align: center;
+    }
+    .search-div {
+        margin-top: 20px;
+        width: 100%;
+        height: 30px;
+    }
+
+    #search-bar {
+        width: 100%;
+        color: white;
+        border: 0;
+        font-size: 13px;
+    }
+
+    .connect-btn-div {
+        width: 100%;
+        justify-content: center;
+    }
+    .topbar {
+        display: flex;
+        justify-content: start;
+    }
+    .results-div{
+        max-height: 70vh;
+    }
+
+}
