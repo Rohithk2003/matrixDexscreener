@@ -18,7 +18,6 @@ import {
 } from 'wagmi/chains';
 import {alchemyProvider} from 'wagmi/providers/alchemy';
 import {publicProvider} from 'wagmi/providers/public';
-import { darkTheme } from '@rainbow-me/rainbowkit';
 
 const {chains, publicClient} = configureChains(
     [mainnet, polygon, optimism, arbitrum, base, zora],
@@ -44,7 +43,7 @@ function App() {
     const [activeQueryType, setActiveQueryType] = useState("token")
     return (
         <WagmiConfig config={wagmiConfig}>
-            <RainbowKitProvider chains={chains} theme={darkTheme()} >
+            <RainbowKitProvider chains={chains}  >
                 <div className="App">
                     <div className={"bg-img"}></div>
                     <div className={"wrapper"}>
