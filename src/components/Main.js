@@ -82,7 +82,7 @@ export default function Main(props) {
             {
                 resultLoaded === true &&
                 <>
-                    <h2 className={"result-heading"}>{searched === true ? props.qtype === "token" ? "Token Search Results" : "Pair Search Results" :props.qtype === "token" ? "Token" : "Pair"}</h2>
+                    <h2 className={"result-heading"}>{props.qtype === "token" ? "Token  Results" : "Pair  Results" }</h2>
                     <div className={"results-div"}>
                         <SearchResult props={result}/>
                     </div>
