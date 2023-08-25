@@ -85,8 +85,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: start;
-    overflow: scroll;
-    height: 100vh;
+    overflow-y: scroll;
+    height: 70vh;
 }
 
 .display {

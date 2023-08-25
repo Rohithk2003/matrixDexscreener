@@ -103,7 +103,7 @@ export function Price(props) {
 
 export function Result(props) {
     return (
-        <div className={"main-result-div"}>
+        <div key={props} className={"main-result-div"}>
             <BasicInfoComponent props={props}/>
             <Btoken props={props}/>
             <Qtoken props={props}/>
@@ -117,14 +117,15 @@ export function Result(props) {
 export default function SearchResult(props) {
     let data = []
     if (props.props) {
-         data = props.props.pairs.slice(0, 10);
+         data = props.props.pairs.slice(0, 11);
+        data.sort((a, b) => parseFloat(b.priceUsd) - parseFloat(a.priceUsd));
     }
     return (
         <div className={"Result"}>
             {props.props &&
-                data.map((d) => {
+                data.map((d,index) => {
                     return (
-                        <Result props={d}/>
+                        <Result key={index} props={d}/>
                     )
                 })
             }

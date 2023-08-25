@@ -10,7 +10,19 @@ export default function Main(props) {
     const [searched, setSearchStatus] = useState(false)
     const [result, setResult] = useState("")
     const [resultLoaded, setResultStatus] = useState(false)
-    const [showgif, gif] = useState(false)
+    const [showgif, gif] = useState(true)
+    useEffect(() => {
+        const loadPreData = async () => {
+            if (searched === false && resultLoaded === false) {
+                const response = await fetch("https://api.dexscreener.io/latest/dex/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
+                const data =await response.json();
+                setResult(data)
+                setResultStatus(true)
+                setSearchStatus(false)
+            }
+        }
+        loadPreData();
+    })
     useEffect(() => {
             const loaddata = async () => {
                 if (searched === true) {
@@ -51,6 +63,7 @@ export default function Main(props) {
                 <div className={"search-div"}>
                     <form onSubmit={(e) => {
                         e.preventDefault()
+                        setResultStatus(false)
                         setSearchStatus(true)
                     }}>
                         <input id={"search-bar"} placeholder={"Search"} value={query}
@@ -69,7 +82,7 @@ export default function Main(props) {
             {
                 resultLoaded === true &&
                 <>
-                    <h2 className={"result-heading"}>{props.qtype === "token" ? "Token" : "Pair"} Search Results</h2>
+                    <h2 className={"result-heading"}>{searched === true ? props.qtype === "token" ? "Token Search Results" : "Pair Search Results" :props.qtype === "token" ? "Token" : "Pair"}</h2>
                     <div className={"results-div"}>
                         <SearchResult props={result}/>
                     </div>
